@@ -141,7 +141,6 @@ async def create_app():
     app.router.add_get('/', websocket_handler)  # WebSocket endpoint at root
     app.router.add_get('/ws', websocket_handler)  # Alternative WS endpoint
     app.router.add_get('/healthz', health_check)  # Health check
-    app.router.add_head('/healthz', health_check)  # HEAD request support
     app.router.add_get('/status', status_handler)  # Status endpoint
     
     return app
