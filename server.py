@@ -80,7 +80,7 @@ async def websocket_handler(request):
                 for client in connected_clients:
                     if client != ws and not client.closed:
                         try:
-                            await client.send_str(f"Broadcast: {data}")
+                            await client.send_str(data)
                         except:
                             pass
                             
